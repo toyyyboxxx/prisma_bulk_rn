@@ -39,7 +39,7 @@ def calculate_subnets(branch_str):
         s2 = f"10.{120 + digit1}.{octet3}.0/24"
         s3 = f"10.{130 + digit1}.{octet3}.0/24"
         return f"{s1}, {s2}, {s3}"
-    except:
+    except ValueError:
         return "10.x.x.0/24"
 
 # --- Helper: Generate Config Block ---
