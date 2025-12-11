@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+# --- Vibe Coded by Toybox --- 
+
 # --- Page Config ---
 st.set_page_config(page_title="Prisma Access Config Generator", layout="wide")
 
@@ -8,11 +10,12 @@ st.title("🔌 Prisma Access Config Generator")
 st.markdown("Generate CLI commands with **Peer IP Support** and **Automated Descriptions**.")
 
 # --- Constants & Data ---
-TEMPLATE = "rn-tpl-fbm"
-TENANT = "fbm"
-CRYPTO_IKE = "velocloud-ike-crypto-primary"
-CRYPTO_IPSEC = "velocloud-ipsec-crypto-default"
-DOMAIN = "fbmsales.com"
+st.sidebar.header("Global Configuration")
+TEMPLATE = st.sidebar.text_input("Template Name", value="rn-tpl-fbm")
+TENANT = st.sidebar.text_input("Tenant Name", value="fbm")
+CRYPTO_IKE = st.sidebar.text_input("IKE Crypto Profile", value="velocloud-ike-crypto-primary")
+CRYPTO_IPSEC = st.sidebar.text_input("IPSec Crypto Profile", value="velocloud-ipsec-crypto-default")
+DOMAIN = st.sidebar.text_input("Domain", value="fbmsales.com")
 
 # REGION MAPPING
 REGION_MAP = {
